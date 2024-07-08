@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    image: myapp:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - ENVIRONMENT=production
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
