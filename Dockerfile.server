@@ -1,0 +1,23 @@
+# Dockerfile for the gRPC server
+
+# Start from a base image with Go installed
+FROM golang:1.16
+
+# Set the current working directory inside the container
+WORKDIR /app
+
+# Copy the Go module files first to take advantage of Docker's caching
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copy the rest of the application code
+COPY . .
+
+# Build the Go application
+RUN go build -o server ./server/main.go
+
+# Expose the port the server will run on
+EXPOSE 50051
+
+# Command to run the executable
+CMD ["./server"]

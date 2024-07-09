@@ -61,3 +61,38 @@ Fetch user details by user ID.
 {
     "id": 1
 }
+
+**Response:**
+```json
+{
+    "user": {
+        "id": 1,
+        "fname": "Steve",
+        "city": "LA",
+        "phone": 1234567890,
+        "height": 5.8,
+        "married": true
+    }
+}
+ 
+### ListUser
+Retrieve a list of users by their IDs.
+
+**Request:**
+```json
+{
+   "ids": [1, 2, 3, 4]
+}
+
+
+### SearchUsers
+Search for users based on specific criteria (e.g., city, phone number, marital status).
+
+Request:
+
+```json
+{
+    "city": "CA",
+    "phone": 8978678978,
+    "married": false
+}

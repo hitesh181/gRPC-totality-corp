@@ -62,8 +62,6 @@ func main() {
 			{Id: 3, Fname: "John", City: "NY", Phone: 9878675645, Height: 6.2, Married: false},
 			{Id: 4, Fname: "Angela", City: "UK", Phone: 78676578234, Height: 5.8, Married: true},
 			
-			
-			// Add more users as needed
 		},
 	})
 	log.Printf("server listening at %v", lis.Addr())
